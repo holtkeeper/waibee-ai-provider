@@ -33,7 +33,7 @@ export interface ToModelsDevOptions {
   baseURL?: string
 }
 
-const PACKAGE_NAME = 'waibee-ai-provider'
+const PACKAGE_NAME = '@holtkeeper/waibee-ai-provider'
 
 /**
  * The chat models of a catalog as a models.dev provider entry, so tools that read models.dev data

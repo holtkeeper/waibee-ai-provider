@@ -1,5 +1,5 @@
 {
-  "name": "waibee-ai-provider",
+  "name": "@holtkeeper/waibee-ai-provider",
   "version": "0.1.0",
   "description": "Waibee Router provider for the Vercel AI SDK, with the model catalog, prices and cost estimates",
   "keywords": [
@@ -32,6 +32,9 @@
       "default": "./dist/index.js"
     },
     "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.build.json",

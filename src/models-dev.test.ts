@@ -28,7 +28,7 @@ test('toModelsDev lists chat models with prices per million', () => {
   expect(toModelsDev([chat, embedding])).toEqual({
     id: 'waibee',
     name: 'Waibee',
-    npm: 'waibee-ai-provider',
+    npm: '@holtkeeper/waibee-ai-provider',
     api: 'https://api.waibee.com/v1',
     doc: 'https://docs.waibee.com/router/models/',
     env: ['WAIBEE_API_KEY'],

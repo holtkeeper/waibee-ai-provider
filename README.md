@@ -1,4 +1,4 @@
-# waibee-ai-provider
+# @holtkeeper/waibee-ai-provider
 
 A [Waibee Router](https://docs.waibee.com/router/) provider for the [Vercel AI SDK](https://ai-sdk.dev),
 plus the model catalog with prices and a cost estimator.
@@ -30,8 +30,8 @@ Create a key at [chat.waibee.com/api-keys](https://chat.waibee.com/api-keys) and
 `WAIBEE_API_KEY`.
 
 ```ts
+import { waibee } from '@holtkeeper/waibee-ai-provider'
 import { generateText } from 'ai'
-import { waibee } from 'waibee-ai-provider'
 
 const { text } = await generateText({
   model: waibee('anthropic/claude-sonnet-4.6'),
@@ -42,7 +42,7 @@ const { text } = await generateText({
 `createWaibee` takes settings when the environment default does not fit:
 
 ```ts
-import { createWaibee } from 'waibee-ai-provider'
+import { createWaibee } from '@holtkeeper/waibee-ai-provider'
 
 const waibee = createWaibee({
   apiKey: process.env.MY_WAIBEE_KEY, // default: WAIBEE_API_KEY, read on each request
@@ -144,7 +144,7 @@ prices.
 ## Catalog and prices
 
 ```ts
-import { listWaibeeModels, supports } from 'waibee-ai-provider'
+import { listWaibeeModels, supports } from '@holtkeeper/waibee-ai-provider'
 
 const models = await listWaibeeModels() // every class; or waibee.models()
 const agents = models.filter((m) => m.class === 'chat' && supports(m, 'tools'))
@@ -167,7 +167,7 @@ writes and output each at their own rate, reasoning at its own rate where the mo
 per-request price.
 
 ```ts
-import { estimateCost } from 'waibee-ai-provider'
+import { estimateCost } from '@holtkeeper/waibee-ai-provider'
 
 const result = await generateText({ model: waibee('waibee/auto'), prompt })
 const model = models.find((m) => m.id === result.response.modelId)
@@ -187,7 +187,7 @@ are reported in `providerMetadata.waibee.webSearchRequests`.
 limits, capabilities), for tools and dashboards that already read models.dev data:
 
 ```ts
-import { listWaibeeModels, toModelsDev } from 'waibee-ai-provider'
+import { listWaibeeModels, toModelsDev } from '@holtkeeper/waibee-ai-provider'
 
 const entry = toModelsDev(await listWaibeeModels())
 const catalog = { ...(await (await fetch('https://models.dev/api.json')).json()), waibee: entry }
