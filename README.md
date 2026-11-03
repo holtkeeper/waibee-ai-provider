@@ -12,14 +12,12 @@ plus the model catalog with prices and a cost estimator.
 
 ## Install
 
-Not on npm yet; install from GitHub:
-
 ```bash
-npm install github:holtkeeper/waibee-ai-provider ai
+npm install @holtkeeper/waibee-ai-provider ai
 ```
 
 ```bash
-bun add github:holtkeeper/waibee-ai-provider ai
+bun add @holtkeeper/waibee-ai-provider ai
 ```
 
 Requires AI SDK 7 (`ai@^7`, provider specification v4) and Node 20+ or Bun.
@@ -222,6 +220,9 @@ bun run build   # dist/ for Node consumers
 `WAIBEE_API_KEY=… bun test` also runs a live test that makes one cheap request.
 `WAIBEE_API_KEY=… bun run sync` refreshes `src/snapshot.ts` and the model id types from the live
 catalog.
+
+To release, bump `version` in `package.json` and `src/version.ts`, then push a `v<version>` tag: CI
+runs the checks, publishes to npm with provenance and creates the GitHub release.
 
 ## License
 
