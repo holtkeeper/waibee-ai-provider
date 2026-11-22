@@ -1,6 +1,6 @@
 {
   "name": "@holtkeeper/waibee-ai-provider",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Waibee Router provider for the Vercel AI SDK, with the model catalog, prices and cost estimates",
   "keywords": [
     "ai",
